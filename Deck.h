@@ -13,11 +13,9 @@ class Deck {
 
 public:
     Deck();
-    void Shuffle();
 
-private:
-    Card* GetACard();
-    void SetDeck();
+    Card GetACard(int index);
+    Card GetARandomCard();
 };
 
 
