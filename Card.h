@@ -16,10 +16,15 @@ enum class ECardType
 class Card {
     ECardType type;
     int cardNumber;
+    int cardStartIndex;
 
 public:
-    Card(ECardType t, int n);
+    Card(ECardType cardType, int number);
     ~Card();
+
+    int GetCardNumber();
+    int GetCardStartIndex();
+    ECardType GetCardType();
 };
 
 
