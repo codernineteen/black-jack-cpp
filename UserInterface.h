@@ -16,8 +16,9 @@ public:
     UserInterface();
 
     void Greeting();
-    void ShowMenu();
+    int ShowMenu();
     void PrintCard(Player& player);
+    void PrintBudget(Player& player);
 
     int GetPlayerInput();
 

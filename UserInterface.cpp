@@ -42,12 +42,13 @@ void UserInterface::Greeting()
 )" << "\n";
 }
 
-void UserInterface::ShowMenu()
+int UserInterface::ShowMenu()
 {
     std::cout << "1. Start" << std::endl;
     std::cout << "2. Rule Description" << std::endl;
     std::cout << "3. Current Budget" << std::endl;
     std::cout << "4. ExitGame" << std::endl;
+    GetPlayerInput();
 }
 
 
@@ -83,9 +84,17 @@ void UserInterface::PrintCard(Player& player)
     }
 }
 
+void UserInterface::PrintBudget(Player &player)
+{
+    int currentBudget = player.GetBudget();
+
+    std::cout << "Your current budget is : " <<  currentBudget << std::endl;
+}
+
 int UserInterface::GetPlayerInput()
 {
     int mode;
+    std::cout << "Your input: ";
     std::cin >> mode;
 
     return mode;

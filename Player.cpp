@@ -8,7 +8,12 @@ Player::Player() {}
 
 std::vector<Card> Player::GetCards()
 {
-    return ownCards
+    return ownCards;
+}
+
+int Player::GetBudget()
+{
+    return budget;
 }
 
 void Player::SetACard(Deck& d)
