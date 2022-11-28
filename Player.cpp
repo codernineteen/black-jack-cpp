@@ -3,3 +3,16 @@
 //
 
 #include "Player.h"
+
+Player::Player() {}
+
+std::vector<Card> Player::GetCards()
+{
+    return ownCards
+}
+
+void Player::SetACard(Deck& d)
+{
+    Card tempCard = d.GetARandomCard();
+    ownCards.push_back(tempCard);
+}
