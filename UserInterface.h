@@ -5,7 +5,7 @@
 #ifndef BLACKJACK_USERINTERFACE_H
 #define BLACKJACK_USERINTERFACE_H
 
-#include "Deck.h"
+#include "Player.h"
 #include <vector>
 #include <string>
 
@@ -15,7 +15,11 @@ class UserInterface {
 public:
     UserInterface();
 
-    void PrintCard(Deck& cardDeck);
+    void Greeting();
+    void ShowMenu();
+    void PrintCard(Player& player);
+
+    int GetPlayerInput();
 
 };
 

@@ -23,28 +23,71 @@ UserInterface::UserInterface() {
     inFile.close();
 };
 
-//플레이어가 가진 카드 정보를 토대로 출력
-void UserInterface::PrintCard(Deck& cardDeck)
+void UserInterface::Greeting()
 {
-    //이 아래 코드 나중에 플레이어가 가진 카드로 출력하는 코드로 바꿔야함
-    Card Card1 = cardDeck.GetARandomCard(); // 테스트 용으로 카드 하나 뽑아오기
-    Card Card2 = cardDeck.GetARandomCard();
-    int Card1Idx = Card1.GetCardStartIndex();
-    int Card2Idx = Card2.GetCardStartIndex();
+    std::cout << R"(
+------------------------------------------------------------------------------------------------------------
+
+▀█████████▄   ▄█          ▄████████  ▄████████    ▄█   ▄█▄           ▄█    ▄████████  ▄████████    ▄█   ▄█▄
+  ███    ███ ███         ███    ███ ███    ███   ███ ▄███▀          ███   ███    ███ ███    ███   ███ ▄███▀
+  ███    ███ ███         ███    ███ ███    █▀    ███▐██▀            ███   ███    ███ ███    █▀    ███▐██▀
+ ▄███▄▄▄██▀  ███         ███    ███ ███         ▄█████▀             ███   ███    ███ ███         ▄█████▀
+▀▀███▀▀▀██▄  ███       ▀███████████ ███        ▀▀█████▄             ███ ▀███████████ ███        ▀▀█████▄
+  ███    ██▄ ███         ███    ███ ███    █▄    ███▐██▄            ███   ███    ███ ███    █▄    ███▐██▄
+  ███    ███ ███▌    ▄   ███    ███ ███    ███   ███ ▀███▄          ███   ███    ███ ███    ███   ███ ▀███▄
+▄█████████▀  █████▄▄██   ███    █▀  ████████▀    ███   ▀█▀      █▄ ▄███   ███    █▀  ████████▀    ███   ▀█▀
+             ▀                                   ▀              ▀▀▀▀▀▀                            ▀
+
+------------------------------------------------------------------------------------------------------------
+)" << "\n";
+}
+
+void UserInterface::ShowMenu()
+{
+    std::cout << "1. Start" << std::endl;
+    std::cout << "2. Rule Description" << std::endl;
+    std::cout << "3. Current Budget" << std::endl;
+    std::cout << "4. ExitGame" << std::endl;
+}
+
+
+
+//플레이어가 가진 카드 정보를 토대로 출력
+void UserInterface::PrintCard(Player& player)
+{
+    std::vector<Card> playerCards = player.GetCards();
+    std::vector<int> CardIndices;
+    for(auto card : playerCards)
+    {
+        CardIndices.push_back(card.GetCardStartIndex());
+    }
+
     for(int i=0; i < 9; i++)
     {
         if(i==0 or i==8)
         {
-            std::cout << cardLines[Card1Idx+i] << "  ";
-            std::cout << cardLines[Card2Idx+i];
+            for(int CardIdx : CardIndices)
+            {
+                std::cout << cardLines[CardIdx+i] << "  ";
+            }
         }
         else
         {
-            std::cout << cardLines[Card1Idx+i] << " ";
-            std::cout << cardLines[Card2Idx+i];
+            for(int CardIdx : CardIndices)
+            {
+                std::cout << cardLines[CardIdx+i] << " ";
+            }
         }
 
         std::cout << "\n";
     }
+}
+
+int UserInterface::GetPlayerInput()
+{
+    int mode;
+    std::cin >> mode;
+
+    return mode;
 }
 
