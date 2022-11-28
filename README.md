@@ -18,3 +18,16 @@ Command line black jack game with cpp programming language
    - 딜러가 블랙잭이아니라면 플레이어는 보험금을 잃는다.
 3. 푸쉬(push) : 플레이어와 딜러의 카드 합이 같은 경우 비기게 되고 배팅 금액을 돌려받는다.
 4. 서렌더(surrender) : 플레이어가 게임을 포기하고 배팅 금액의 절반을 돌려받는다. 단, 딜러가 블랙잭을 가지고 있을 경우 게임 포기는 불가하다.
+
+# TODO
+- Card class
+
+- Deck class
+
+- Player class
+
+- Dealer class
+
+- UserInterface class
+
+- BlackJack class
