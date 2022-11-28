@@ -85,6 +85,7 @@ void UserInterface::PrintCard(Player& player)
 
 int UserInterface::GetPlayerInput()
 {
+    std::cout << "Choose the option";
     int mode;
     std::cin >> mode;
 

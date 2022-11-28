@@ -15,7 +15,8 @@ int main()
 
     UI.Greeting();
     UI.ShowMenu();
-    // UI.PrintCard(player1); 잘 출력되는 것 확인함.
+    UI.PrintCard(player1);
+    UI.GetPlayerInput();
 
     return 0;
 }
