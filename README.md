@@ -21,13 +21,28 @@ Command line black jack game with cpp programming language
 
 # TODO
 - Card class
-
+   - [변수]
+     - 카드 타입
+     - 카드 시작 인덱스
+     - 카드 숫자
+   - [함수]
+      - 카드 숫자 정보 반환
+      - 카드 타입 정보 반환
+      - 카드 인덱스 반환
 - Deck class
+   - [변수]
+   - [함수]
 
 - Player class
+   - [변수]
+   - [함수]
 
 - Dealer class
+   - []
 
 - UserInterface class
 
 - BlackJack class
+
+지금 커밋해놓을게
+
