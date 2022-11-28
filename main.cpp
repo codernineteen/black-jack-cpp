@@ -16,6 +16,7 @@ int main()
     UI.Greeting();
     UI.ShowMenu();
     UI.PrintCard(player1);
+    UI.InputMessamge();
     UI.GetPlayerInput();
 
     return 0;

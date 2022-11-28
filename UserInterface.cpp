@@ -83,9 +83,14 @@ void UserInterface::PrintCard(Player& player)
     }
 }
 
+void UserInterface::InputMessamge()
+{
+    std::cout << "Enter one option above four: ";
+}
+
+
 int UserInterface::GetPlayerInput()
 {
-    std::cout << "Choose the option";
     int mode;
     std::cin >> mode;
 

@@ -19,6 +19,8 @@ public:
     void ShowMenu();
     void PrintCard(Player& player);
 
+    void InputMessamge();
+
     int GetPlayerInput();
 
 };
