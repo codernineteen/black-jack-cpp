@@ -45,7 +45,9 @@ Card Deck::GetARandomCard()
     std::mt19937 gen(rd()); // seed the generator
     std::uniform_int_distribution<> distr(0, currentDeck.size()); // define the range
     int randomIndex = distr(gen); // generate numbers
+    Card aRandomCard = currentDeck[randomIndex];
+    currentDeck.erase(currentDeck.begin() + randomIndex);
 
-    return currentDeck[randomIndex];
+    return aRandomCard;
 }
 

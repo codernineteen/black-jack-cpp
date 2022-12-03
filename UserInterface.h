@@ -6,6 +6,7 @@
 #define BLACKJACK_USERINTERFACE_H
 
 #include "Player.h"
+#include "Dealer.h"
 #include <vector>
 #include <string>
 
@@ -16,11 +17,11 @@ public:
     UserInterface();
 
     void Greeting();
-    int ShowMenu();
-    void PrintCard(Player& player);
+    void ShowMenu();
+    void ChargeCoin();
+    void PrintCard(Player &player, Dealer &dealer);
+    void PrintDescription(); //Minbyeongrok
     void PrintBudget(Player& player);
-
-    int GetPlayerInput();
 
 };
 
