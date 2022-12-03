@@ -1,21 +1,9 @@
-#include "Deck.h"
-#include "UserInterface.h"
-#include "Player.h"
+#include "BlackJack.h"
+#include <iostream>
 
 int main()
 {
-    //카드 덱 생성
-    Deck tempDeck = Deck();
-    UserInterface UI = UserInterface();
-    Player player1 = Player();
-
-    //카드 두 개 생성
-    player1.SetACard(tempDeck);
-    player1.SetACard(tempDeck);
-
-    UI.Greeting();
-    UI.ShowMenu();
-    UI.PrintCard(player1);
-
+    BlackJack blackJackGame = BlackJack();
+    blackJackGame.run();
     return 0;
 }

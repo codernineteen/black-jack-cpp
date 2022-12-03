@@ -15,9 +15,13 @@ class Player {
 public:
     Player();
 
-    std::vector<Card> GetCards();
+    std::vector<Card> GetPlayerCards();
     int GetBudget();
-    void SetACard(Deck& d); //이것도 테스트용 - 나중에 hit으로만 카드 받아야한다.
+    void DecreaseBudget(int amount);
+    void IncreaseBudget(int amount);
+    void SetACard(Deck& d);
+    void InitializePlayerCardsToEmpty();
+    void ChangeToMaxBudget();
 };
 
 
