@@ -72,14 +72,74 @@ void UserInterface::ShowMenu()
 
 
 //플레이어가 가진 카드 정보를 토대로 출력
-void UserInterface::PrintCard(Player& player)
+void UserInterface::PrintCard(Player& player, Dealer& dealer)
 {
     std::vector<Card> playerCards = player.GetPlayerCards();
     std::vector<int> CardIndices;
+    std::vector<Card> dealerCards = dealer.GetDealerCards(); //딜러 카드 받아오기
+    std::vector<int> dCardIndices;
+
     for(auto card : playerCards)
     {
         CardIndices.push_back(card.GetCardStartIndex());
     }
+
+    for(auto card: dealerCards) {
+        dCardIndices.push_back(card.GetCardStartIndex());
+    }
+
+
+    //딜러
+    std::cout << "------------------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------Dealer Cards--------------------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------------------------------------------------------------------------" << std::endl;
+    if(dCardIndices.size() == 2)
+    {
+        for(int i=0; i < 9; i++)
+        {
+            if(i==0 or i==8)
+            {
+                std::cout << cardLines[dCardIndices[0]+i] << "  ";
+                std::cout << cardLines[468+i] << "  ";
+            }
+            else
+            {
+                std::cout << cardLines[dCardIndices[0]+i] << " ";
+                std::cout << cardLines[468+i] << " ";
+            }
+            std::cout << "\n";
+        }
+    }
+    else
+    {
+        for(int i=0; i < 9; i++)
+        {
+            if(i==0 or i==8)
+            {
+                for(int CardIdx : dCardIndices)
+                {
+                    std::cout << cardLines[CardIdx+i] << "  ";
+                }
+            }
+            else
+            {
+                for(int CardIdx : dCardIndices)
+                {
+                    std::cout << cardLines[CardIdx+i] << " ";
+                }
+            }
+
+            std::cout << "\n";
+        }
+    }
+
+
+    std::cout<<"\n";
+
+    //유저
+    std::cout << "------------------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------Player Cards--------------------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------------------------------------------------------------------------" << std::endl;
 
     for(int i=0; i < 9; i++)
     {
@@ -138,5 +198,26 @@ it is a tie and the bet amount is refunded.
 However, if the dealer has a blackjack, the game cannot be abandoned.
 ------------------------------------------------------------------------------------------------------------
 )" << "\n";
+}
+
+void UserInterface::ChargeCoin() {
+    std::cout << R"(
+------------------------------------------------------------------------------------------------------------
+
+                                                  ██████████
+                                                ██          ██
+                                              ██    ░░██░░░░░░██
+                                            ██    ░░██████░░░░░░██
+                                            ██  ░░░░██░░░░░░░░░░██
+                                            ██  ░░░░░░██░░░░░░░░██
+                                            ██  ░░░░░░░░██░░░░░░██
+                                            ██  ░░░░██████░░░░░░██
+                                              ██  ░░░░██░░░░░░██
+                                                ██░░░░░░░░░░██
+                                                  ██████████
+
+                                              [CHARGING STATION]
+------------------------------------------------------------------------------------------------------------
+)"<< std::endl;
 }
 
