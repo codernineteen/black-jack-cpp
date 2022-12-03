@@ -53,6 +53,6 @@ void Card::TransformAceCard()
     }
     else
     {
-        cardNumber = 1;드
+        cardNumber = 1;
     }
 }
