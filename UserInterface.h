@@ -20,8 +20,6 @@ public:
     void PrintCard(Player& player);
     void PrintBudget(Player& player);
 
-    int GetPlayerInput();
-
 };
 
 
