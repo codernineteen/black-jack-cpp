@@ -24,7 +24,7 @@ public:
 
     int GetCardNumber();
     int GetCardStartIndex();
-    ECardType GetCardType();
+    void TransformAceCard();
 };
 
 
