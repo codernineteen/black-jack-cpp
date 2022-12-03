@@ -3,3 +3,14 @@
 //
 
 #include "Dealer.h"
+
+Dealer::Dealer() {}
+
+void Dealer::SetACard(Deck &d) {
+    Card tempCard = d.GetARandomCard();
+    ownCards.push_back(tempCard);
+}
+
+std::vector<Card> Dealer::GetDealerCards() {
+    return ownCards;
+}

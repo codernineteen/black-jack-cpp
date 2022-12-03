@@ -5,9 +5,17 @@
 #ifndef BLACKJACK_DEALER_H
 #define BLACKJACK_DEALER_H
 
+#include <vector>
+#include "Deck.h"
 
 class Dealer {
+    std::vector<Card> ownCards;
 
+public:
+    Dealer();
+
+    std::vector<Card> GetDealerCards();
+    void SetACard(Deck& d);
 };
 
 
